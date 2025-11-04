@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Auto Diagram UI Generator",
+  "description": "Automatically generates UI diagrams when design.md or requirements.md files are updated, then updates design_diagram_ui.md",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "design.md",
+      "requirements.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The design.md or requirements.md file has been updated. Please analyze the changes and generate the following diagrams:  UI Diagram. After generating all diagrams, update the design_diagram_ui.md file with the new content."
+  }
+}

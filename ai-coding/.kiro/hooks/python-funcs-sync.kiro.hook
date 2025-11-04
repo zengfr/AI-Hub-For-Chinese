@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Python Functions Sync",
+  "description": "当Python文件保存时，自动提取并同步文件中的类和函数信息到my_docs/funcs.md文件，包括函数签名、类定义、参数说明等",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "请分析刚保存的Python文件，执行以下操作：\n\n1. 提取文件中所有的类定义和函数定义\n2. 记录每个类的：\n   - 类名\n   - 继承关系\n   - 主要方法列表\n   - 类的用途说明\n\n3. 记录每个函数的：\n   - 函数名\n   - 参数列表（包括类型注解）\n   - 返回类型\n   - 函数用途简述\n\n4. 将提取的信息按以下格式更新到项目my_docs目录的funcs.md文件中：\n   ```markdown\n   ## 文件：{文件路径}\n   \n   ### 类定义\n   - **类名**: 用途说明\n     - 方法: method1(), method2()\n   \n   ### 函数定义\n   - **函数名(参数)**: 返回类型 - 用途说明\n   ```\n\n5. 如果my_docs/funcs.md不存在则创建，如果存在则更新对应文件的部分\n6. 保持文件按模块路径排序，便于查找\n7. 添加最后更新时间戳\n\n请确保提取的信息准确完整，并遵循项目的文档规范。"
+  }
+}

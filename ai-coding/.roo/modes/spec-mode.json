@@ -1,0 +1,8 @@
+{
+  "name": "Spec Mode",
+  "slug": "spec-mode",
+  "description": "Gated Requirements → Design → Tasks; blocks code until tasks are approved.",
+  "entrypoint": ".roo/rules-spec-mode/system.md",
+  "capabilities": ["chat", "read", "write"],
+  "tags": ["planning", "spec", "orchestration"]
+}
